@@ -1,0 +1,40 @@
+.mat-toolbar {
+  justify-content: center;
+}
+
+.toolbar-title {
+  text-transform: uppercase;
+  font-size: 150%;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+
+.example-icon {
+  font-size: 160%;
+  padding: 0 12px 10px;
+}
+
+.table-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0 10px;
+}
+
+.table-button {
+  width: 250px;
+}
+
+.example-container {
+  margin: 0 60px 30px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-cell {
+  font-size: small;
+  font-weight: bold;
+}

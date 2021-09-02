@@ -1,0 +1,18 @@
+<mat-card>
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+  <div mat-dialog-content>
+    <p>{{ data.message }}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button type="button" (click)="cancel()">Cancelar</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="accept()"
+      cdkFocusInitial
+    >
+      Aceptar
+    </button>
+  </div>
+</mat-card>

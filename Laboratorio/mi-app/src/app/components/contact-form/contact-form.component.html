@@ -1,0 +1,206 @@
+<!--CREAR/EDITAR CONTACTO-->
+<div class="flex-container">
+  <mat-card class="card-form">
+    <mat-card-content>
+      <span class="title">{{ title }}</span>
+      <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+        <mat-form-field appearance="standard">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca su nombre"
+            formControlName="nombre"
+          />
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="contact.nombre.hasError('required')">
+            Nombre es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.nombre.hasError('minlength') &&
+              !contact.nombre.hasError('required')
+            "
+          >
+            Este campo requiere al menos 3 caracteres
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.nombre.hasError('pattern') &&
+              !contact.nombre.hasError('required')
+            "
+          >
+            Este campo no debe tener números
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="standard">
+          <mat-label>Apellidos</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca su apellido completo"
+            formControlName="apellido"
+          />
+          <mat-error *ngIf="contact.apellido.hasError('required')">
+            Apellido es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.apellido.hasError('minlength') &&
+              !contact.apellido.hasError('required')
+            "
+          >
+            Este campo requiere al menos 3 caracteres
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.apellido.hasError('pattern') &&
+              !contact.apellido.hasError('required')
+            "
+          >
+            Este campo no debe tener números
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="standard">
+          <mat-label>Edad</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Introduzca su edad"
+            formControlName="edad"
+          />
+          <mat-error *ngIf="contact.edad.hasError('required')">
+            Edad es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              (contact.edad.hasError('min') || contact.edad.hasError('max')) &&
+              !contact.edad.hasError('required')
+            "
+          >
+            Edad no válida: Valor entre 0 y 125
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="standard">
+          <mat-label>DNI</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca DNI con letra"
+            formControlName="DNI"
+          />
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <mat-error *ngIf="contact.DNI.hasError('required')">
+            DNI es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.DNI.hasError('pattern') &&
+              !contact.DNI.hasError('required')
+            "
+          >
+            DNI no válido: 8 dígitos seguido de una letra A-Z
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="standard">
+          <mat-label>Cumpleaños</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="dd/MM/yyyy"
+            formControlName="cumple"
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>cake</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker> </mat-datepicker>
+          <mat-error *ngIf="contact.cumple.hasError('required')">
+            Cumpleaños es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.cumple.touched &&
+              contact.cumple.invalid &&
+              !contact.cumple.hasError('required')
+            "
+          >
+            Cumpleaños es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="standard">
+          <mat-label>Color Favorito</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca su color favorito"
+            formControlName="colorFav"
+          />
+          <mat-icon matSuffix>palette</mat-icon>
+          <mat-error *ngIf="contact.colorFav.hasError('required')">
+            Color Favorito es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.colorFav.hasError('minlength') &&
+              !contact.colorFav.hasError('required')
+            "
+          >
+            Este campo requiere al menos 3 caracteres
+          </mat-error>
+          <mat-error
+            *ngIf="
+              contact.colorFav.hasError('pattern') &&
+              !contact.colorFav.hasError('required')
+            "
+          >
+            Este campo no debe tener números
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <label id="radio-label">Seleccione su sexo:</label>
+        <mat-radio-group
+          aria-labelledby="radio-label"
+          class="radio-group"
+          formControlName="sexo"
+        >
+          <mat-radio-button
+            class="radio-button"
+            *ngFor="let genero of sexo"
+            [value]="genero"
+          >
+            {{ genero }}
+          </mat-radio-button>
+        </mat-radio-group>
+        <button
+          mat-raised-button
+          matTooltip="Ir a Lista Contactos"
+          aria-label="Botón para ir a lista de contactos"
+          color="accent"
+          type="button"
+          routerLink="/usuarios"
+          class="form-button"
+        >
+          Usuarios
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="form-button"
+          [disabled]="!contactForm.valid"
+        >
+          Registrar
+        </button>
+        <button
+          mat-raised-button
+          type="reset"
+          class="form-button"
+          (click)="resetForm()"
+        >
+          Cancelar
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
