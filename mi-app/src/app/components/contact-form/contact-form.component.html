@@ -1,0 +1,217 @@
+<!--FORMULARIO REGISTRO-->
+
+<div class="flex-container">
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>
+        <span class="title">Formulario Registro</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="usuario" (ngSubmit)="addUser()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca su nombre"
+            formControlName="nombre"
+          />
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="user.nombre.hasError('required')">
+            Nombre es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              user.nombre.hasError('minlength') &&
+              !user.nombre.hasError('required')
+            "
+          >
+            Este campo requiere al menos 3 caracteres
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca su apellido completo"
+            formControlName="apellido"
+          />
+          <mat-error *ngIf="user.apellido.hasError('required')">
+            Apellido es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              user.apellido.hasError('minlength') &&
+              !user.apellido.hasError('required')
+            "
+          >
+            Este campo requiere al menos 3 caracteres
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Edad</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Introduzca su edad"
+            formControlName="edad"
+          />
+          <mat-error *ngIf="user.edad.hasError('required')">
+            Edad es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              (user.edad.hasError('min') || user.edad.hasError('max')) &&
+              !user.edad.hasError('required')
+            "
+          >
+            Edad no válida: Valor entre 0 y 125
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>DNI</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca DNI con letra"
+            formControlName="DNI"
+          />
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <mat-error *ngIf="user.DNI.hasError('required')">
+            DNI es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              user.DNI.hasError('pattern') && !user.DNI.hasError('required')
+            "
+          >
+            DNI no válido: 8 dígitos seguido de una letra A-Z
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Cumpleaños</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="dd/MM/yyyy"
+            formControlName="cumple"
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>cake</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker> </mat-datepicker>
+          <mat-error *ngIf="user.cumple.hasError('required')">
+            Cumpleaños es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Color Favorito</mat-label>
+          <input
+            matInput
+            placeholder="Introduzca su color favorito"
+            formControlName="colorFav"
+          />
+          <mat-icon matSuffix>palette</mat-icon>
+          <mat-error *ngIf="user.colorFav.hasError('required')">
+            Color Favorito es <strong>obligatorio</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              user.colorFav.hasError('minlength') &&
+              !user.colorFav.hasError('required')
+            "
+          >
+            Este campo requiere al menos 3 caracteres
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <label id="radio-label">Seleccione su sexo:</label>
+        <mat-radio-group
+          aria-labelledby="radio-label"
+          class="radio-group"
+          formControlName="sexo"
+        >
+          <mat-radio-button
+            class="radio-button"
+            *ngFor="let genero of sexo"
+            [value]="genero"
+          >
+            {{ genero }}
+          </mat-radio-button>
+        </mat-radio-group>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="form-button"
+          [disabled]="!usuario.valid"
+        >
+          Registrar
+        </button>
+        <button
+          mat-raised-button
+          type="reset"
+          class="form-button"
+          (click)="reset()"
+        >
+          Cancelar
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!--LISTADO USUARIOS REGISTRADOS-->
+
+  <div class="flex-card-list">
+    <mat-card class="card-list">
+      <mat-card-header>
+        <mat-card-title>
+          <span class="title">Listado de usuarios</span>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item
+            *ngFor="let usuario of listaUsuarios; let i = index; last as last"
+          >
+            <div class="content-list">
+              <p mat-line class="p">{{ i + 1 }}</p>
+              <p mat-line class="p">{{ usuario.nombre }}</p>
+              <p mat-line class="p">{{ usuario.apellido }}</p>
+              <p mat-line class="p">{{ usuario.edad }}</p>
+              <p mat-line class="p">{{ usuario.DNI }}</p>
+              <p mat-line class="p">
+                {{ usuario.cumple.getDate() }}/
+                {{ usuario.cumple.getMonth() + 1 }}/
+                {{ usuario.cumple.getFullYear() }}
+              </p>
+              <p mat-line class="p">{{ usuario.colorFav }}</p>
+              <p mat-line class="p">{{ usuario.sexo }}</p>
+              <button
+                mat-icon-button
+                aria-label="Editar Usuario"
+                (click)="modificarUser(i)"
+                class="list-button"
+              >
+                <mat-icon matListIcon class="blue">edit</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                aria-label="Borrar Usuario"
+                (click)="borrarUser(i)"
+                class="list-button"
+              >
+                <mat-icon matListIcon class="red">delete_outline</mat-icon>
+              </button>
+              <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

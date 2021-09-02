@@ -1,0 +1,61 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-form {
+  width: 300px;
+  margin: 30px;
+  padding: 15px 0 10px 30px;
+}
+
+.title {
+  color: rgb(77, 73, 73);
+  letter-spacing: 4px;
+}
+
+form {
+  font-size: 85%;
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+.radio-button {
+  margin: 5px 0;
+}
+
+.form-button {
+  margin: 10px;
+}
+
+.flex-card-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-list {
+  width: 900px;
+  margin: 30px 5px 0 0;
+}
+
+.content-list {
+  display: flex;
+}
+
+.p {
+  margin-right: 40px;
+  text-align: center;
+}
+.list-button {
+  width: 20px;
+  margin-right: 12px;
+}
+
+.blue {
+  color: rgb(81, 81, 223);
+}
+
+.red {
+  color: rgb(211, 15, 15);
+}

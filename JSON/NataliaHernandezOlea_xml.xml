@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<supermercados>
+		<nombre>Mercadona</nombre>
+		<dirección>Av. de Juan Pablo II, 21, 23, 18014, Granada, Granada</dirección>
+		<horarioApertura>Lunes a Sábado: 9:00 - 21:30</horarioApertura>
+		<parking>true</parking>
+		<geolocalización>
+			<latitud>37°11'53.9 N</latitud>
+			<longitud>3°36'44.0 W</longitud>
+		</geolocalización>
+		<secciones>
+			<nombreSección>Frutas y Verduras</nombreSección>
+			<productos>
+				<nombreProducto>Fresas</nombreProducto>
+				<descripción>Fresón de Palos</descripción>
+				<perecedero>true</perecedero>
+				<precioVenta>3.78</precioVenta>
+				<oferta>false</oferta>
+				<periodoVigencia></periodoVigencia>
+				<formato>Bandeja 500 g</formato>
+				<habitual>true</habitual>
+				<adquirido>true</adquirido>
+				<cantidadAComprar>2</cantidadAComprar>
+			</productos>
+			<productos>
+				<nombreProducto>Mango</nombreProducto>
+				<descripción>Mango variedad Osteen</descripción>
+				<perecedero>true</perecedero>
+				<precioVenta>1.10</precioVenta>
+				<oferta>false</oferta>
+				<periodoVigencia></periodoVigencia>
+				<formato>Pieza 510 g</formato>
+				<habitual>true</habitual>
+				<adquirido>true</adquirido>
+				<cantidadAComprar>4</cantidadAComprar>
+			</productos>
+			<productos>
+				<nombreProducto>Lechuga</nombreProducto>
+				<descripción>Lechuga iceberg base para ensaladas</descripción>
+				<perecedero>true</perecedero>
+				<precioVenta>0.55</precioVenta>
+				<oferta>true</oferta>
+				<periodoVigencia>
+					<inicioOferta>25/03/2021 9:00 a.m.</inicioOferta>
+					<finOferta>26/03/2021 21:30 p.m.</finOferta>
+				</periodoVigencia>
+				<formato>Paquete 250 g</formato>
+				<habitual>false</habitual>
+				<adquirido>false</adquirido>
+				<cantidadAComprar></cantidadAComprar>
+			</productos>
+		</secciones>
+		<secciones>
+			<nombreSección>Pescadería</nombreSección>
+			<productos>
+				<nombreProducto>Salmón</nombreProducto>
+				<descripción>Salmón fresco escalopines</descripción>
+				<perecedero>true</perecedero>
+				<precioVenta>8.2</precioVenta>
+				<oferta>true</oferta>
+				<periodoVigencia>
+					<inicioOferta>25/03/2021 9:00 a.m.</inicioOferta>
+					<finOferta>25/03/2021 21:30 p.m.</finOferta>
+				</periodoVigencia>
+				<formato>Bandeja 400 g</formato>
+				<habitual>true</habitual>
+				<adquirido>true</adquirido>
+				<cantidadAComprar>1</cantidadAComprar>
+			</productos>
+			<productos>
+				<nombreProducto>Bacalao</nombreProducto>
+				<descripción>Bacalao al punto de sal</descripción>
+				<perecedero>true</perecedero>
+				<precioVenta>8.02</precioVenta>
+				<oferta>false</oferta>
+				<periodoVigencia></periodoVigencia>
+				<formato>Bandeja 500 g</formato>
+				<habitual>false</habitual>
+				<adquirido>true</adquirido>
+				<cantidadAComprar>1</cantidadAComprar>
+			</productos>
+		</secciones>
+		<secciones>
+			<nombreSección>Panadería</nombreSección>
+			<productos>
+				<nombreProducto>Pan</nombreProducto>
+				<descripción>Pan integral 100%</descripción>
+				<perecedero>true</perecedero>
+				<precioVenta>2.29</precioVenta>
+				<oferta>false</oferta>
+				<periodoVigencia></periodoVigencia>
+				<formato>Unidad</formato>
+				<habitual>true</habitual>
+				<adquirido>false</adquirido>
+				<cantidadAComprar></cantidadAComprar>
+			</productos>
+			<productos>
+				<nombreProducto>Magdalenas</nombreProducto>
+				<descripción>Magdalenas con pepitas de chocolates</descripción>
+				<perecedero>true</perecedero>
+				<precioVenta>2.54</precioVenta>
+				<oferta>true</oferta>
+				<periodoVigencia>
+					<inicioOferta>25/03/2021 9:00 a.m.</inicioOferta>
+					<finOferta>27/03/2021 21:30 p.m.</finOferta>
+				</periodoVigencia>
+				<formato>Caja 8 unid</formato>
+				<habitual>false</habitual>
+				<adquirido>true</adquirido>
+				<cantidadAComprar>2</cantidadAComprar>
+			</productos>
+		</secciones>
+	</supermercados>
+</root>

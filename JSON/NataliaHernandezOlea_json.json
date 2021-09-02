@@ -1,0 +1,317 @@
+{
+  "supermercados": [
+    {
+      "nombre": "Mercadona",
+      "dirección": "Av. de Juan Pablo II, 21, 23, 18014, Granada, Granada",
+      "horarioApertura": "Lunes a Sábado: 9:00 -21:30",
+      "parking": true,
+      "geolocalización": {
+        "latitud": "37°11'53.9 N",
+        "longitud": "3°36'44.0 W"
+      },
+      "secciones": [
+        {
+          "nombreSección": "Frutas y Verduras",
+          "productos": [
+            {
+              "nombreProducto": "Fresas",
+              "descripción": "Fresón de Palos",
+              "perecedero": true,
+              "precioVenta": 3.78,
+              "oferta": false,
+              "periodoVigencia": null,
+              "formato": "Bandeja 500 g",
+              "habitual": true,
+              "adquirido": true,
+              "cantidadAComprar": 2
+            },
+            {
+              "nombreProducto": "Mango",
+              "descripción": "Mango variedad Osteen",
+              "perecedero": true,
+              "precioVenta": 1.1,
+              "oferta": false,
+              "periodoVigencia": null,
+              "formato": "Pieza 510 g",
+              "habitual": true,
+              "adquirido": true,
+              "cantidadAComprar": 4
+            },
+            {
+              "nombreProducto": "Lechuga",
+              "descripción": "Lechuga iceberg base para ensaladas",
+              "perecedero": true,
+              "precioVenta": 0.55,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "25/03/2021 9:00 a.m.",
+                "finOferta": "26/03/2021 21:30 p.m."
+              },
+              "formato": "Paquete 250 g",
+              "habitual": false,
+              "adquirido": false,
+              "cantidadAComprar": null
+            }
+          ]
+        },
+        {
+          "nombreSección": "Pescadería",
+          "productos": [
+            {
+              "nombreProducto": "Salmón",
+              "descripción": "Salmón fresco escalopines",
+              "perecedero": true,
+              "precioVenta": 8.2,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "25/03/2021 9:00 a.m.",
+                "finOferta": "25/03/2021 21:30 p.m."
+              },
+              "formato": "Bandeja 400 g",
+              "habitual": true,
+              "adquirido": true,
+              "cantidadAComprar": 1
+            },
+            {
+              "nombreProducto": "Bacalao",
+              "descripción": "Bacalao al punto de sal",
+              "perecedero": true,
+              "precioVenta": 8.02,
+              "oferta": false,
+              "periodoVigencia": null,
+              "formato": "Bandeja 500 g",
+              "habitual": false,
+              "adquirido": true,
+              "cantidadAComprar": 1
+            }
+          ]
+        },
+        {
+          "nombreSección": "Panadería",
+          "productos": [
+            {
+              "nombreProducto": "Pan",
+              "descripción": "Pan integral 100%",
+              "perecedero": true,
+              "precioVenta": 2.29,
+              "oferta": false,
+              "periodoVigencia": null,
+              "formato": "Unidad",
+              "habitual": true,
+              "adquirido": false,
+              "cantidadAComprar": null
+            },
+            {
+              "nombreProducto": "Magdalenas",
+              "descripción": "Magdalenas con pepitas de chocolates",
+              "perecedero": true,
+              "precioVenta": 2.54,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "25/03/2021 9:00 a.m.",
+                "finOferta": "27/03/2021 21:30 p.m."
+              },
+              "formato": "Caja 8 unid",
+              "habitual": false,
+              "adquirido": true,
+              "cantidadAComprar": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Alcampo",
+      "dirección": "Av. de Juan Pablo II, 88, 18013, Granada, Granada",
+      "horarioApertura": "Lunes a Sábado: 9:00 - 22:00",
+      "parking": true,
+      "geolocalización": {
+        "latitud": "37°11'54.7 N",
+        "longitud": "3°36'31.1 W"
+      },
+      "secciones": [
+        {
+          "nombreSección": "Básicos del Hogar",
+          "productos": [
+            {
+              "nombreProducto": "Detergente",
+              "descripción": "Detergente Marsella BAYIC",
+              "perecedero": false,
+              "precioVenta": 3.35,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "18/03/2021 9:00 a.m.",
+                "finOferta": "4/04/2021 21:30 p.m."
+              },
+              "formato": "4 l",
+              "habitual": false,
+              "adquirido": true,
+              "cantidadAComprar": 1
+            },
+            {
+              "nombreProducto": "Suavizante",
+              "descripción": "Suavizante azul BAYIC",
+              "perecedero": false,
+              "precioVenta": 2.25,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "18/03/2021 9:00 a.m.",
+                "finOferta": "4/04/2021 21:30 p.m."
+              },
+              "formato": "4 l",
+              "habitual": false,
+              "adquirido": false,
+              "cantidadAComprar": null
+            },
+            {
+              "nombreProducto": "Fregona",
+              "descripción": "Fregona microfibra secado rápido KH7",
+              "perecedero": false,
+              "precioVenta": 2.29,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "18/03/2021 9:00 a.m.",
+                "finOferta": "4/04/2021 21:30 p.m."
+              },
+              "formato": "Unidad",
+              "habitual": true,
+              "adquirido": true,
+              "cantidadAComprar": 1
+            },
+            {
+              "nombreProducto": "Pañuelos",
+              "descripción": "Pañuelos blancos",
+              "perecedero": false,
+              "precioVenta": 0.94,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "18/03/2021 9:00 a.m.",
+                "finOferta": "4/04/2021 21:30 p.m."
+              },
+              "formato": "Caja 200 unid",
+              "habitual": true,
+              "adquirido": false,
+              "cantidadAComprar": null
+            }
+          ]
+        },
+        {
+          "nombreSección": "Lácteos",
+          "productos": [
+            {
+              "nombreProducto": "Leche",
+              "descripción": "Leche entera Central Lechera Asturiana",
+              "perecedero": true,
+              "precioVenta": 0.74,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "18/03/2021 9:00 a.m.",
+                "finOferta": "4/04/2021 21:30 p.m."
+              },
+              "formato": "1 l",
+              "habitual": true,
+              "adquirido": true,
+              "cantidadAComprar": 5
+            },
+            {
+              "nombreProducto": "Leche",
+              "descripción": "Bebida de almendras ALPRO",
+              "perecedero": true,
+              "precioVenta": 1.75,
+              "oferta": false,
+              "periodoVigencia": null,
+              "formato": "1 l",
+              "habitual": false,
+              "adquirido": true,
+              "cantidadAComprar": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Lidl",
+      "dirección": "Av. de Juan Pablo II, 23, 18014, Granada, Granada",
+      "horarioApertura": "Lunes a Sábado: 9:00 - 22:00",
+      "parking": true,
+      "geolocalización": {
+        "latitud": "37°11'53.8 N",
+        "longitud": "3°36'41.2 W"
+      },
+      "secciones": [
+        {
+          "nombreSección": "Bazar",
+          "productos": [
+            {
+              "nombreProducto": "Planta",
+              "descripción": "Yucca",
+              "perecedero": true,
+              "precioVenta": 7.99,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "25/03/2021 9:00 a.m.",
+                "finOferta": "30/03/2021 22:00 p.m."
+              },
+              "formato": "Unidad",
+              "habitual": false,
+              "adquirido": true,
+              "cantidadAComprar": 1
+            },
+            {
+              "nombreProducto": "Planta",
+              "descripción": "Palmera",
+              "perecedero": true,
+              "precioVenta": 6.99,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "25/03/2021 9:00 a.m.",
+                "finOferta": "30/03/2021 22:00 p.m."
+              },
+              "formato": "Unidad",
+              "habitual": false,
+              "adquirido": false,
+              "cantidadAComprar": null
+            }
+          ]
+        },
+        {
+          "nombreSección": "Congelados",
+          "productos": [
+            {
+              "nombreProducto": "Helado",
+              "descripción": "Tarrina de helado fresa y vainilla Deluxe",
+              "perecedero": true,
+              "precioVenta": 2.99,
+              "oferta": true,
+              "periodoVigencia": {
+                "inicioOferta": "25/03/2021 9:00 a.m.",
+                "finOferta": "30/03/2021 22:00 p.m."
+              },
+              "formato": "650 g",
+              "habitual": false,
+              "adquirido": true,
+              "cantidadAComprar": 1
+            }
+          ]
+        },
+        {
+          "nombreSección": "Lácteos",
+          "productos": [
+            {
+              "nombreProducto": "Yogur",
+              "descripción": "Pudding de chocolate alto en proteínas Milbona",
+              "perecedero": true,
+              "precioVenta": 0.99,
+              "oferta": false,
+              "periodoVigencia": null,
+              "formato": "200 g",
+              "habitual": true,
+              "adquirido": true,
+              "cantidadAComprar": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
