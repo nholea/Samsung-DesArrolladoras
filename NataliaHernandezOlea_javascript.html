@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Práctica1 correspondiente al módulo Javascript del curso Samsung DesArrolladoras"
+    />
+    <meta name="author" content="Natalia Hernández Olea" />
+    <title>Práctica Javascript</title>
+    <style>
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      form {
+        width: 400px;
+        margin: 5px 450px;
+        padding: 40px;
+        background-image: radial-gradient(
+          ellipse farthest-corner at 45px 45px,
+          rgb(185, 184, 184) 25%,
+          rgb(233, 207, 207) 75%
+        );
+        border-radius: 10px;
+      }
+
+      #titulo {
+        text-align: center;
+        letter-spacing: 3px;
+        font-weight: lighter;
+      }
+
+      input[type='text'] {
+        padding: 4px;
+        border: 2px inset rgb(228, 222, 222);
+        border-radius: 5px;
+      }
+
+      label {
+        font-size: 85%;
+      }
+
+      button[type='button'] {
+        width: 100px;
+        padding: 6px;
+        margin-left: 150px;
+        background-color: rgb(245, 245, 208);
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+
+      div {
+        margin-left: 550px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="titulo">Cálculo letra DNI</h1>
+    <!--Entrada número y letra DNI-->
+    <form>
+      <label for="dni">Número DNI: </label>
+      <input
+        type="text"
+        name="dni"
+        id="dni"
+        placeholder="Introduzca DNI sin letra..."
+        pattern="[0-9]{8}"
+        required
+      />
+      <br /><br />
+      <label for="letra">Letra DNI: </label>
+      <input
+        type="text"
+        name="letra"
+        id="letra"
+        placeholder="Introduzca letra DNI..."
+        pattern="[A-Za-z]{1}"
+        required
+      />
+      <br /><br />
+      <button type="button" onclick="calcularLetra();">Calcular</button>
+    </form>
+    <div id="resulLetra"></div>
+    <div id="validación"></div>
+    <script>
+      var letras = [
+        'T',
+        'R',
+        'W',
+        'A',
+        'G',
+        'M',
+        'Y',
+        'F',
+        'P',
+        'D',
+        'X',
+        'B',
+        'N',
+        'J',
+        'Z',
+        'S',
+        'Q',
+        'V',
+        'H',
+        'L',
+        'C',
+        'K',
+        'E',
+      ];
+      var validación = document.getElementById('validación');
+
+      document.getElementById('dni').onkeypress = pulsarTecla; //detectar pulsación "Enter" en input número DNI
+      document.getElementById('letra').onkeypress = pulsarTecla; //detectar pulsación "Enter" en input letra DNI
+
+      function pulsarTecla(e) {
+        var tecla = e.keyCode; //valor Unicode de una tecla
+        if (tecla === 13) {
+          //código númerico para la tecla "Enter"
+          calcularLetra(e.target.value); //ejecuta la función con su valor
+        }
+      }
+
+      function calcularLetra() {
+        var numDni = document.getElementById('dni').value; //número DNI introducido
+        var letraIntro = document.getElementById('letra').value; //letra introducida
+        letraIntro = letraIntro.toUpperCase();
+
+        if (numDni === '' || letraIntro === '') {
+          alert('Rellene los campos para continuar');
+        } else {
+          if (!/^\d{8}$/.test(numDni)) {
+            //comprueba si número DNI es distinto de 0-9 y de 8 dígitos
+            alert(
+              'Formato número DNI incorrecto:\nIntroduzca una secuencia númerica de 8 dígitos.'
+            );
+            document.getElementById('dni').value = ''; //borra valor introducido en input número DNI
+          } else {
+            var letraCalcu = letras[numDni % 23]; //letra DNI calculada según el algoritmo
+            document.getElementById('resulLetra').innerHTML =
+              '<h1>' + letraCalcu + '</h1>';
+
+            if (letraCalcu === letraIntro) {
+              validación.style.color = 'green';
+              validación.innerHTML =
+                '<h3> La letra introducida es correcta </h3>';
+            } else {
+              validación.style.color = 'red';
+              validación.innerHTML =
+                '<h3> La letra introducida no es correcta </h3>';
+            }
+          }
+          if (!/^[A-Za-z]{1}$/.test(letraIntro)) {
+            //comprueba si la letra introducida es distinta a una letra
+            alert(
+              'Formato letra incorrecto:\nIntroduzca sólo una letra de la A-Z.'
+            );
+            document.getElementById('letra').value = ''; //borra valor introducido en input letra DNI
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
